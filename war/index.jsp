@@ -43,7 +43,7 @@ birthday (your message), and when the clock strikes 12, they will be wished a Ha
 <li><a href="contact.jsp">Give suggestions!</a></li>
 <li>"like" us on Facebook</li>
 <li>Follow <a href="http://twitter.com/jtmcgee">@jtmcgee</a> on Twitter</li>
-<li>Software Dev's, Fork us on <a href="http://github.com/jdeloach/happybirthday">GitHub</a>.</li>
+<li>Software Dev's, Fork us on <a href="http://github.com/jdeloach/Happy-Birthday">GitHub</a>.</li>
 </ul>
 <jsp:include page="static/html/footer.html" flush="true"/>
 </body>
