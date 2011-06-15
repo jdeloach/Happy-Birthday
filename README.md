@@ -6,7 +6,14 @@ I for one am way too lazy to actually stay up till 12, or more likely, I forget 
 ### Bugs, And Such
 Yeah, it probably has about 1500 bugs, that's fine. If you want to fix one, go for it. Fork it, Push it, I'll merge it and we'll have a pretty little project.
 
+### Config.java
+Of course it is not included because it contains sensitive information. The low down of what you need is a `net.jtmcgee.project.happybirthday.utils.Config` class.
+Within you'll need 4 `public final static String` variables named SECRETKEY, APPID, REDIRECTURI, and APIKEY, all those would come from Facebook.
+Finally you need a `public static String ACCESS_TOKEN(HttpServletRequest request)` method. Within you basically retrieve the session and retrieve the value of `access_token`
+
+
 [Find it on Facebook](http://apps.facebook.com/happymidnightbday)
 [@jtmcgee](http://twitter.com/jtmcgee)
 [jordandeloach.com](http://jordandeloach.com)
-
+[jtmcgee.net projects](http://project.jtmcgee.net)
+[jtmcgee.net](http://jtmcgee.net)
