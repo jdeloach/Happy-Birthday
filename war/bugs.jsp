@@ -14,9 +14,10 @@ So you found a bug? Sweet, thanks for helping the software improve. To report it
 please <a href="http://jtmcgee.net/contact">contact me.</a> In your email please 
 include vital information such as what you were doing when this happened, your email, and anything else
 that might help us find the bug.
-
-You a techie? Be cool and report it on GitHub!
-
+<br /><br />
+You a techie? Be cool and report it on GitHub! Report an issue <a href="https://github.com/jdeloach/Happy-Birthday/issues">here.</a>
+<br /><br />
+Follow <a href="http://twitter.com/jtmcgee">@jtmcgee</a> for more awesomeness.
 <jsp:include page="static/html/footer.html" flush="true"/>
 </body>
 </html>
