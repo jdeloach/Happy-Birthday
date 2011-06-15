@@ -29,7 +29,7 @@
 	  		out.println(ErrorMessage.getErrorHTML("Failed to delete schedule birthday wish," +
 	  				" want to <a href='/bugs.jsp'>report a bug?</a>"));
 	  	}
-	  	out.println("Successfully deleted that user.");
+	  	out.println("Successfully deleted that birthday wish.");
 	%>	
 
 <jsp:include page="static/html/footer.html" flush="true"/>
