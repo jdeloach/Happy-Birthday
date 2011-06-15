@@ -8,60 +8,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>HappyBirthday</servlet-name>
 		<servlet-class>net.jtmcgee.project.happybirthday.HappyBirthdayServlet</servlet-class>
 	</servlet>
-	<!-- JSPC servlet mappings start -->
-
-    <servlet>
-        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
-        <servlet-class>org.apache.jsp.index_jsp</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>org.apache.jsp.delete_jsp</servlet-name>
-        <servlet-class>org.apache.jsp.delete_jsp</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>org.apache.jsp.edit_jsp</servlet-name>
-        <servlet-class>org.apache.jsp.edit_jsp</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>org.apache.jsp.add_jsp</servlet-name>
-        <servlet-class>org.apache.jsp.add_jsp</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>org.apache.jsp.scheduled_jsp</servlet-name>
-        <servlet-class>org.apache.jsp.scheduled_jsp</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
-        <url-pattern>/index.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>org.apache.jsp.delete_jsp</servlet-name>
-        <url-pattern>/delete.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>org.apache.jsp.edit_jsp</servlet-name>
-        <url-pattern>/edit.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>org.apache.jsp.add_jsp</servlet-name>
-        <url-pattern>/add.jsp</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>org.apache.jsp.scheduled_jsp</servlet-name>
-        <url-pattern>/scheduled.jsp</url-pattern>
-    </servlet-mapping>
-
-<!-- JSPC servlet mappings end -->
-
 <servlet-mapping>
 		<servlet-name>HappyBirthday</servlet-name>
 		<url-pattern>/happybirthday</url-pattern>
