@@ -1,0 +1,221 @@
+body {
+	width: 740px;
+	margin: 0;
+	padding: 0;
+	font-family: 'Lucida Grande', Arial;
+	color: #111;
+}
+#header {
+	padding-top: 30px;
+	text-align: center;	
+}
+#footer {
+	padding-top: 10px;
+	font-size: 10px;
+	text-align: center;	
+}
+hr {
+	border: 1px solid #3b5898;	
+}
+a, a:visited {
+	color: #000;	
+}
+a:hover {
+	color: #3b5998;
+	text-decoration: none;	
+}
+a.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#3b5898;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 8px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+a.myButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+a.myButton:active {
+	position:relative;
+	top:1px;
+}
+/* ----------------------- Schedule ---------------------- */
+/*
+To-Do:
+	* Increase table height
+	* Round borders in all browsers
+	* Make it look less table like, and more CSS-ey
+	
+*/
+table.schedule {
+	width: 740px;
+	background-color: #3b5998;
+	border-collapse: collapse;
+}
+table.schedule tr.odd {
+	height: 35px;
+	background-color: #f7f7f7;
+	border: 1px #8b9dc3 solid;
+}
+table.schedule tr.even {
+	background-color: #dfe3ee;
+	height: 35px;
+	border: 1px #8b9dc3 solid;
+}
+table.schedule tr:hover {
+	height: 35px;
+	background-color: #8b9dc3;
+}
+table.schedule tr.header {
+	height: 35px;
+	background-color: #8b9dc3;
+}
+table.schedule tr td select, table.schedule tr td input {
+	width: 175px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+table.schedule tr.header label {
+	background-color: #8b9dc3;
+	margin: 0;
+	padding: 2px 4px;	
+}
+body.show table.schedule tr td {
+	float: center;
+	text-align: center;
+}
+table.schedule td {
+	border: 1px #8b9dc3 solid;
+	text-align: center;
+}
+
+/* ----------------------- viewClass.jsp ---------------------------- */
+table.grid {
+	width: 740px;
+}
+table.grid td {
+	font-size: 12;
+	width: 150px;
+	height: 62px;
+	border: 1px solid black;
+	postition: absolute;
+}
+table.grid td text {
+	float: right;
+	width: 80px;	
+}
+table.grid td img {
+	float: left;
+	width: 60px;
+	height: 80px;
+}
+/* ---------------------- viewTeachers.jsp ----------------------------- */
+body.teacherViewer #courses {
+	width: 318px;
+	float: right;
+	min-height: 300px;
+	padding: 10px;
+}
+body.teacherViewer #teacherBox {
+	width: 370px;
+	padding: 10px;
+	float: left;
+	min-height: 300px;
+}
+body.teacherView fieldset {
+	padding: 0;
+	margin: 0;
+}
+table.teacherComments tr {
+	border: 1px solid black;	
+}
+table.teacherComments td {
+	padding: 0;
+	margin: 0;
+	posistion: absolute;
+	border: 1px solid black;
+}
+table.teacherComments .text {
+	float: right;
+	width: 658px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+table.teacherComments .text .date {
+	color: #A9A9A9;
+	font-size: 8pt;
+}
+table.teacherComments td img {
+	float: left;
+	width: 60px;
+	height: 80px;
+}
+table.teacherComments td {
+	padding: 0px;
+	margin: 0px;
+}
+table.teacherComments .name {
+	padding-left: 5px;
+	margin-top: 0;
+	padding-top: 0;
+	font-size: 10pt;
+	text-decoration: underline;	
+}
+table.teacherComments tr.odd {
+	background-color: #f7f7f7;
+}
+table.teacherComments tr.even {
+	background-color: #dfe3ee;
+}
+/* ----------------------- ERROR MESSAGES ------------------------------ */
+.error {
+	background-color: #FCF0F0;
+	color: #CC0000;
+	border: 1px solid #CC0000;
+	text-align: center;
+	width: 400px;
+	font-family: "Lucida Grande";
+	font-size: 11px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 31px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+/* ------------------------ EDIT.jsp ---------------------------------- */
+fieldset {
+	width: 380px;
+	text-align: left;
+	padding: 20px;
+	border: 2px #3b5898 solid;
+}
+fieldset textarea {
+	border: 1px #3b5898 solid;
+	font-size: 14px;
+	font-family: 'Lucida Grande', Arial;
+	background-color: #dfe3ee;
+	width: 370px;
+	height: 75px;
+}
+
+	

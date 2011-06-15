@@ -1,0 +1,5 @@
+src/net/jtmcgee/project/happybirthday/utils/Config.java
+.settings/
+war/WEB-INF/
+! war/WEB-INF/web.xml
+! war/WEB-INF/appengine-web.xml

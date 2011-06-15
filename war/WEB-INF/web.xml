@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>HappyBirthday</servlet-name>
+		<servlet-class>net.jtmcgee.project.happybirthday.HappyBirthdayServlet</servlet-class>
+	</servlet>
+	<!-- JSPC servlet mappings start -->
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.delete_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.delete_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.edit_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.edit_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.add_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.add_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.scheduled_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.scheduled_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.delete_jsp</servlet-name>
+        <url-pattern>/delete.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.edit_jsp</servlet-name>
+        <url-pattern>/edit.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.add_jsp</servlet-name>
+        <url-pattern>/add.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.scheduled_jsp</servlet-name>
+        <url-pattern>/scheduled.jsp</url-pattern>
+    </servlet-mapping>
+
+<!-- JSPC servlet mappings end -->
+
+<servlet-mapping>
+		<servlet-name>HappyBirthday</servlet-name>
+		<url-pattern>/happybirthday</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddBirthday</servlet-name>
+		<servlet-class>net.jtmcgee.project.happybirthday.controllers.AddBirthday</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddBirthday</servlet-name>
+		<url-pattern>/addBirthday</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>OAuth</filter-name>
+		<filter-class>net.jtmcgee.project.happybirthday.utils.OAuth</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OAuth</filter-name>
+		<url-pattern>/oauth</url-pattern>
+	</filter-mapping>
+		<servlet>
+		<servlet-name>Cron</servlet-name>
+		<servlet-class>net.jtmcgee.project.happybirthday.controllers.Cron</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Cron</servlet-name>
+		<url-pattern>/cron</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
