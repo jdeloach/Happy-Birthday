@@ -46,6 +46,6 @@ public class AddBirthday extends HttpServlet {
 			pm.close();
 		}
 		resp.getWriter().println("Added Birthday!");
-		resp.sendRedirect("/scheduled.jsp");
+		resp.sendRedirect("/scheduled.jsp?added=true");
 	}
 }

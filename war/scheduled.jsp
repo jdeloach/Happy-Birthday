@@ -17,9 +17,28 @@
 <link href="/static/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<%
+try {
+if(request.getParameter("added").equals("true")) {
+	%>
+<div id="fb-root"></div>
+   <script src="http://connect.facebook.net/en_US/all.js">
+   </script>
+   <script>
+     FB.init({ 
+       appId:'210869075618877', cookie:true, 
+       status:true, xfbml:true 
+     });
+
+     FB.ui({ method: 'apprequests', 
+       message: 'Hey! I just scheduled a Happy Birthday post on my friends wall for midnight, you should do it too.'});
+   </script>
+   <%
+} } catch (Exception e) {}
+%>
 <jsp:include page="static/html/header.html" flush="true"/>
 
-	  	<% //try {	%>
+	  	<% try {	%>
 	  	<table class="schedule">
 			<tr class="header">
 				<th width="200px;"><label>Name</label></th>
@@ -40,13 +59,13 @@
 			</tr>
 			<% } %>
 		  	</table>
-	  	<% /*} catch(FacebookOAuthException FBOE) {
+	  	<% } catch(FacebookOAuthException FBOE) {
 	  		out.println("</table>");
 	  		out.println(ErrorMessage.OAuthError());
 	  	} catch(Exception e) {
 	  		out.println("</table>");
 	  		out.println(ErrorMessage.GeneralError());
-	  	}*/
+	  	}
 	  	%>
 		
 
