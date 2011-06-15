@@ -11,6 +11,8 @@
         <include path="**/*.html" />
         <include path="**/*.js" />
         <include path="**/*.css" />
+        <include path="**/*.png" />
+        <include path="**/*.gif" />
     </static-files>
     <sessions-enabled>true</sessions-enabled>
 	
