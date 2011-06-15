@@ -13,7 +13,11 @@ Finally you need a `public static String ACCESS_TOKEN(HttpServletRequest request
 
 
 [Find it on Facebook](http://apps.facebook.com/happymidnightbday)
+
 [@jtmcgee](http://twitter.com/jtmcgee)
+
 [jordandeloach.com](http://jordandeloach.com)
-[jtmcgee.net projects](http://project.jtmcgee.net)
+
+[jtmcgee.net projects](http://project.jtmcgee.net)i
+
 [jtmcgee.net](http://jtmcgee.net)
