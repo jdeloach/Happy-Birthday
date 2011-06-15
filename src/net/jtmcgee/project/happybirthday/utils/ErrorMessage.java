@@ -6,7 +6,7 @@ public class ErrorMessage {
 			errorMsg + "</div>";
 	}
 	public static String OAuthError() {
-		return getErrorHTML("Your OAuth Token is expired. Get a <a href='#'>new one?</a>" +
+		return getErrorHTML("Your OAuth Token is expired. Get a <a href='" + Facebook.getLoginRedirectURL() + "'>new one?</a>" +
 	  				"<br /> Or perhaps you want to report a <a href='bugs.jsp'>bug?</a>");
 	}
 	public static String GeneralError() {
