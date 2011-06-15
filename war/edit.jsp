@@ -22,7 +22,6 @@
 	try {
 	FacebookClient fbClient = new DefaultFacebookClient(Config.ACCESS_TOKEN(request));
 	User user = fbClient.fetchObject(request.getParameter("id"), User.class);
-	// TODO if is the right USER
 	PersistenceManager pm = PMF.get().getPersistenceManager();
 	Query query = pm.newQuery(Birthday.class, "uid == '" + request.getParameter("id") + "' && wisherID == '" + session.getAttribute("uid") + "'");
 	Birthday bday = ((List<Birthday>) query.execute()).get(0);

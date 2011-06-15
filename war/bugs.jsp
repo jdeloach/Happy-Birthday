@@ -18,10 +18,10 @@ that might help us find the bug.
 You a techie? Be cool and report it on GitHub! Report an issue <a href="https://github.com/jdeloach/Happy-Birthday/issues">here.</a>
 <br /><br />
 Follow <a href="http://twitter.com/jtmcgee">@jtmcgee</a> for more awesomeness.
-
+<br />
 Thank you to our beta testers:
 <ul>
-<li>Sophie Wang (blame her for the awful color scheme))</li>
+<li>Sophie Wang (blame her for the awful color scheme)</li>
 <li>Mohana Chakrabarti</li>
 <li>Austin Canady</li>
 </ul>

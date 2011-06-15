@@ -31,12 +31,14 @@
 		Connection<User> results = fbClient.fetchConnection("me/friends", User.class);
 		String[] colors = {"red", "blue", "green", "orange", "brown"};
 		Random rand = new Random();
+		out.println("<center>");
 		for(int i = 0; i < results.getData().size(); i++) {
 			// TODO rm those who do not list B-Days
 			if(results.getData().get(i).getName().toUpperCase().indexOf(request.getParameter("s").toUpperCase()) > -1)
 				out.println("<a href=\"/add.jsp?p=" + results.getData().get(i).getId() +
 						"\" style=\"color:" + colors[rand.nextInt(colors.length)] + "\">" + results.getData().get(i).getName() + "</a><br />");
 		}
+		out.println("</center>");
 	} catch(FacebookOAuthException FBOE) {
   		out.println(ErrorMessage.OAuthError());
   	} catch(Exception e) {
@@ -55,7 +57,7 @@
 			<%= "You will be wishing " + user.getName() + " a Happy Birthday at 12:00 A.M. for their birthday, " + user.getBirthday() %>
 			<br /><br />
 			<input type="hidden" name="id" id="id" value="<% out.print(request.getParameter("p")); %>">
-			<textarea id="message" name="message">Random message from the sky!</textarea>
+			<textarea id="message" name="message">Happy Birthday, <%= user.getName() %>!</textarea>
 			<br /><br />
 			<a href="#" onclick="document.add.submit()" class="myButton">Add</a>
 			</fieldset>

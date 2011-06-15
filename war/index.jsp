@@ -26,8 +26,6 @@ try {
 		response.sendRedirect(Facebook.getLoginRedirectURL());
 	    FacebookClient fbClient = new DefaultFacebookClient(request.getParameter("token"));
 		session.setAttribute("uid", fbClient.fetchObject("me", User.class).getId());
-	} else {
-		response.sendRedirect(Facebook.getLoginRedirectURL());
 	}
 } catch (Exception e) {
 //	response.sendRedirect(Facebook.getLoginRedirectURL());
