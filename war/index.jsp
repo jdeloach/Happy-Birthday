@@ -26,25 +26,41 @@ try {
 		response.sendRedirect(Facebook.getLoginRedirectURL());
 	    FacebookClient fbClient = new DefaultFacebookClient(request.getParameter("token"));
 		session.setAttribute("uid", fbClient.fetchObject("me", User.class).getId());
+	} else {
+		response.sendRedirect(Facebook.getLoginRedirectURL());
 	}
 } catch (Exception e) {
-	out.println("<h3><a href=\"" + Facebook.getLoginRedirectURL() + "\">Login with Facebook</a></h3>");
+//	response.sendRedirect(Facebook.getLoginRedirectURL());
+	out.println("<center><h2><a href=\"" + Facebook.getLoginRedirectURL() + "\" style=\"color: darkblue;\">Please login with Facebook</a></h2></center>");
 }
 %>
-Yo dawg. This is the Happy Birthday FB App! I don't know about you but I am too lazy/bored/tired to stay
-up till 12:00 A.M. to wish someone a Happy Birthday, however, I wish I could. This app basicalyl enables
-you to cheat. Instead of staying up, just configure the app to wish the right person a message on their 
+This is the Happy Birthday FB App!
+This enables you to wish someone a Happy Birthday at 12:00 A.M. without actually being there. Whatever the reason maybe, this app can solve it.
+Instead of staying up, focusing on just this, just configure the app to wish the right person a message on their 
 birthday (your message), and when the clock strikes 12, they will be wished a Happy Birthday from you.
 <br />
-<strong>Note:</strong> I wouldn't recomend using this all the time, else the awesomeness of a 12 A.M.
+<strong>Note:</strong> I wouldn't recommend using this all the time, else the awesomeness of a 12 A.M.
 "Happy Birthday" goes away.
+<br />
+<div style="float: left">
+<br />
 <ul>
-<li>As always, please <a href="bugs.jsp">report bugs</a>! That's the only way software improves.</li>
-<li><a href="contact.jsp">Give suggestions!</a></li>
-<li>"like" us on Facebook</li>
-<li>Follow <a href="http://twitter.com/jtmcgee">@jtmcgee</a> on Twitter</li>
-<li>Software Dev's, Fork us on <a href="http://github.com/jdeloach/Happy-Birthday">GitHub</a>.</li>
+<li><a href="/add.jsp" style="color: red;">Get started!</a></li>
+<li>As always, please <a href="bugs.jsp" style="color: green;">report bugs</a>! That's the only way software improves.</li>
+<li><a href="contact.jsp" style="color: blue;">Give suggestions!</a></li>
+<li>Follow <a href="http://twitter.com/jtmcgee" style="color: orange;">@jtmcgee</a> on Twitter</li>
+<li>Software Dev's, Fork us on <a href="http://github.com/jdeloach/Happy-Birthday" style="color: teal;">GitHub</a>.</li>
 </ul>
+<br />
+</div>
+<div style="float: right">
+<img src="/static/images/Happy_Birthday_Balloons.gif" height="240px" width="180px">
+</div>
+<center>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<fb:like-box href="https://www.facebook.com/apps/application.php?id=210869075618877" width="292" show_faces="false" border_color="" stream="false" header="false"></fb:like-box>
+</center>
 <jsp:include page="static/html/footer.html" flush="true"/>
 </body>
 </html>

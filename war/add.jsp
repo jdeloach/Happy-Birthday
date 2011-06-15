@@ -4,6 +4,7 @@
 <%@ page import="com.restfb.*" %>
 <%@ page import="com.restfb.types.*" %>
 <%@ page import="com.restfb.exception.FacebookOAuthException" %>
+<%@ page import="java.util.Random" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,11 +29,13 @@
 	try {
 		FacebookClient fbClient = new DefaultFacebookClient(Config.ACCESS_TOKEN(request));
 		Connection<User> results = fbClient.fetchConnection("me/friends", User.class);
+		String[] colors = {"red", "blue", "green", "orange", "brown"};
+		Random rand = new Random();
 		for(int i = 0; i < results.getData().size(); i++) {
 			// TODO rm those who do not list B-Days
 			if(results.getData().get(i).getName().toUpperCase().indexOf(request.getParameter("s").toUpperCase()) > -1)
 				out.println("<a href=\"/add.jsp?p=" + results.getData().get(i).getId() +
-						"\">" + results.getData().get(i).getName() + "</a><br />");
+						"\" style=\"color:" + colors[rand.nextInt(colors.length)] + "\">" + results.getData().get(i).getName() + "</a><br />");
 		}
 	} catch(FacebookOAuthException FBOE) {
   		out.println(ErrorMessage.OAuthError());
@@ -49,7 +52,7 @@
 			<center>
 			<fieldset>
 			<legend>Add</legend>
-			<%= "You will be wishing " + user.getName() + " a Happy Birthday at 12:00 A.M. on " + user.getBirthday() %>
+			<%= "You will be wishing " + user.getName() + " a Happy Birthday at 12:00 A.M. for their birthday, " + user.getBirthday() %>
 			<br /><br />
 			<input type="hidden" name="id" id="id" value="<% out.print(request.getParameter("p")); %>">
 			<textarea id="message" name="message">Random message from the sky!</textarea>
