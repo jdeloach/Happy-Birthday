@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -62,7 +63,8 @@ public class Birthday {
 		this.message = message;
 	}
 	public boolean isToday() {
-	    DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+	    DateFormat formatter = new SimpleDateFormat("MM/dd");
+	    formatter.setTimeZone(TimeZone.getTimeZone("America/Chicago"));
 
 		if(formatter.format((new Date())).equals(formatter.format(this.birthday)))
 			return true;
@@ -111,10 +113,6 @@ public class Birthday {
 		// Add the tentative age to the date of birth to get this year's birthday
 		dateOfBirth.add(Calendar.YEAR, age);
 
-		// If this year's birthday has not happened yet, subtract one from age
-		if (then.before(dateOfBirth)) {
-		    age--;
-		}
 		return age;
 	}
 }

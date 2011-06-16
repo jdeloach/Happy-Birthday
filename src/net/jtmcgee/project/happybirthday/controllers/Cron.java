@@ -40,21 +40,25 @@ public class Cron extends HttpServlet {
 			// get oauth token and post it
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		List<Birthday> bdays = (List<Birthday>) pm.newQuery(Birthday.class).execute();
-		List list = new ArrayList();
+		//List list = new ArrayList();
 		
 		for(Birthday bday: bdays) {
 			if(bday.isToday()) {
 				FacebookClient fbClient = new DefaultFacebookClient(bday.getToken());
 				FacebookType publishMessageResponse = fbClient.publish(bday.getUid() + "/feed", FacebookType.class, Parameter.with("message", bday.getMessage()));
 				resp.getWriter().println("Published message ID: " + publishMessageResponse.getId());
-				list.add("Result ID: " + publishMessageResponse.getId() + "\n" +
+				/*list.add("Result ID: " + publishMessageResponse.getId() + "\n" +
 						"Birthday wish to: " + bday.getUid() + ", From: " + bday.getWisher() + "\n" +
-						"Message: " + bday.getMessage());
+						"Message: " + bday.getMessage());*/
 				// TODO rm birthday if it succeded (sp?)
+			} else {
+				resp.getWriter().println(bday.getDate() + " is not today.");
 			}
 		}
 		
+		
 		// MAIL
+		/*
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
 
@@ -69,6 +73,7 @@ public class Cron extends HttpServlet {
 
         try {
             Message msg = new MimeMessage(session);
+            
             msg.setFrom(new InternetAddress("jordan@jtmcgee.net", "Jtmcgee.net Webmaster"));
             msg.addRecipient(Message.RecipientType.TO,
                              new InternetAddress("jordan@jtmcgee.net", "Jordan DeLoach"));
@@ -80,6 +85,6 @@ public class Cron extends HttpServlet {
             // ...
         } catch (MessagingException e) {
             // ...
-        }
+        } */
 	}
 }

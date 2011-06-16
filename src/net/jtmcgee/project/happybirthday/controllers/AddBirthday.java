@@ -32,12 +32,11 @@ public class AddBirthday extends HttpServlet {
 		
 		Birthday bday = null;
         HttpSession session = req.getSession(true);
-
+        
 		try {
 			bday = new Birthday(user.getBirthday(), user, message, (String) session.getAttribute("access_token"), req);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			resp.getWriter().println("Error parsing birthday, are you sure (s)he has one?");
 		}
 
 		try {
