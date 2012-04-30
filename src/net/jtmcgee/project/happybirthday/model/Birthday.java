@@ -66,8 +66,14 @@ public class Birthday {
 	    DateFormat formatter = new SimpleDateFormat("MM/dd");
 	    formatter.setTimeZone(TimeZone.getTimeZone("America/Chicago"));
 
-		if(formatter.format((new Date())).equals(formatter.format(this.birthday)))
+	    // bug was having it wish happy bday a day early, so this should remedy it. not the best fix, but the fastest.
+	    this.birthday.setDate(this.birthday.getDate() + 1);
+	    
+	    if(formatter.format((new Date())).equals(formatter.format(this.birthday))) {
+		    this.birthday.setDate(this.birthday.getDate() - 1);
 			return true;
+	    }
+	    this.birthday.setDate(this.birthday.getDate() - 1);
 		return false;
 	}
 	public void setToken(String token) {
